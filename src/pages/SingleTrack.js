@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+// ================ Tracks as displayed on the 'Show' page ================ //
+
 const SingleTrack = ({ tracks, edit, deleteTrack }) => {
   // get the params from the url
   const params = useParams()
@@ -17,7 +19,10 @@ const SingleTrack = ({ tracks, edit, deleteTrack }) => {
       <h1>{track?.title}</h1>
       <h2>{track?.artist}</h2>
       <h3>{track?.genre}</h3>
-      <h3>{track?.trackLength}</h3>
+
+      <audio src={track?.mp3Url} controls>
+        Your browser is unsupported
+      </audio>
 
       <Link to="/">
         <button>Go back</button>

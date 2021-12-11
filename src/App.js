@@ -3,8 +3,6 @@ import Form from "./pages/Form";
 import AllTracks from "./pages/AllTracks";
 import SingleTrack from "./pages/SingleTrack";
 
-import Valentine from "./audio/Valentine.mp3"
-
 // Import Hooks
 import { useState, useEffect } from "react"
 
@@ -102,7 +100,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Mottify Home</h1>
+      <h1>MottWire</h1>
       <Link to="/new"><button>Add a Song</button></Link>
       <Routes>
         <Route path="/" element={<AllTracks tracks={tracks} />}/>
@@ -122,12 +120,6 @@ function App() {
           buttonLabel="Update"
         />}/>
       </Routes>
-
-      <audio src="https://res.cloudinary.com/asianboymandude/video/upload/v1639236014/Valentine_kgkfri.mp3"controls>
-        {/* <source src={Valentine} /> */}
-        {/* <source src="https://soundbible.com/mp3/45min_april_rainstorm-mike-koenig.mp3" /> */}
-        Your browser is unsupported
-      </audio>
 
     </div>
   );

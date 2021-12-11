@@ -63,9 +63,9 @@ const Form = ({ initialTrack, handleSubmit, buttonLabel }) => {
     <input 
       type="text"
       onChange={handleChange}
-      value={formData.trackLength}
-      name="trackLength"
-      placeholder="Track Length"
+      value={formData.mp3Url}
+      name="mp3Url"
+      placeholder="mp3 File"
     />
     <input type="submit" value={buttonLabel} />
   </form>
