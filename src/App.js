@@ -100,7 +100,9 @@ function App() {
 
   return (
     <div className="App">
+      <Link to="/" className="title">
       <h1>MottWire</h1>
+      </Link>
       <Link to="/new"><button>Add a Song</button></Link>
       <Routes>
         <Route path="/" element={<AllTracks tracks={tracks} />}/>

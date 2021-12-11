@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  { AiFillHeart } from "react-icons/ai"
 
-const StarRating = (props) => {
+const Favorite = (props) => {
   const [rating, setRating] = useState(null)
   const [hover, setHover] = useState(null)
 
@@ -31,4 +31,4 @@ const StarRating = (props) => {
   )
 }
 
-export default StarRating;
+export default Favorite;
