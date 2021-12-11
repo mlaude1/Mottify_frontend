@@ -1,3 +1,7 @@
+* {
+  transition: 150ms
+}
+
 // audio::-webkit-media-controls-panel {
 //   // background-color: black;
 // }
@@ -5,3 +9,18 @@
 audio::-webkit-media-controls-enclosure {
   border: 2px solid green;
 }
+
+input[type="radio"] {
+  display: none;
+}
+
+.favorite-button {
+
+}
+
+#heart-icon {
+  cursor: pointer;
+}
+  #heart-icon:hover {
+    transform: translateY(-10);
+  }

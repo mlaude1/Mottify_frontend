@@ -28,3 +28,4 @@ import Valentine from "./audio/Valentine.mp3"
 ```
 
 - looks like I don't need the trackLength anymore (removed display from Form and SingleTrack)
+- adding 'favorite' to the schema as an integer
