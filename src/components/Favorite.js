@@ -21,7 +21,7 @@ const Favorite = (props) => {
           <AiFillHeart 
           id="heart-icon"
           size={25}
-          color={ratingValue <= (hover || rating) ? "#80ed99" : "#e4e5e9"}
+          color={ratingValue <= (hover || rating) ? "#ff5666" : "#e4e5e9"}
           onMouseEnter={() => setHover(ratingValue)} 
           onMouseLeave={() => setHover(null)}
           />

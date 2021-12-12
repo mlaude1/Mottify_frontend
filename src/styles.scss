@@ -3,9 +3,11 @@
 // =========================
 // Variables
 // =========================
-$black: #282828;
+$light-grey: #d3d3d3;
 $charcoal: #495057;
-$green: #0cce6b;
+$black: #282828;
+$light-grn: #0cce6b;
+$green: #52b788;
 $emerald: #34a0a4;
 
 // =========================
@@ -22,15 +24,33 @@ $emerald: #34a0a4;
 * {
   box-sizing: border-box;
   transition: 150ms;
+  margin: 0;
 }
 
 body {
   @include body-font();
-  // background-color: #282828;
+  // background-color: #151516;
+  background-image: url("https://i.imgur.com/gfDQjC2.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 102vh;
 }
 
 audio::-webkit-media-controls-enclosure {
   border: 2px solid green;
+}
+
+// =========================
+// NavBar
+// =========================
+nav {
+  border: 2px dashed orange;
+  background-color: white;
+  padding-bottom: 15px;
+
+  h1 {
+    text-align: center;
+  }
 }
 
 // =========================
@@ -55,7 +75,6 @@ audio::-webkit-media-controls-enclosure {
 // =========================
 // Tracks (Index)
 // =========================
-
 .tracks-container {
   border: 2px dashed red;
   margin: auto;
@@ -65,12 +84,14 @@ audio::-webkit-media-controls-enclosure {
   max-width: 2000px;
 
   .track {
-    border: 2px dashed orange;
+    border: 1px solid $light-grey !important; 
     text-align: center;
     border: 2.5px solid;
     margin: 30px 30px;
     width: 500px;
     border-radius: 6px;
+    padding: 20px 0;
+    background-color: whitesmoke;
   
     a {
       text-decoration: none;
@@ -82,7 +103,7 @@ audio::-webkit-media-controls-enclosure {
     h2 {
       color: $charcoal;
       font-weight: 350;
-  
+      margin: 10px 0 15px 0;
     }
   }
     .track:hover {
@@ -104,7 +125,7 @@ input[type="radio"] {
   }
 
 // =========================
-// Tracks (Single)
+// Tracks (Show)
 // =========================
 .single-track {
   text-align: center;
@@ -160,3 +181,46 @@ input[type="radio"] {
 // =========================
 // Form
 // =========================
+form {
+  border: 2px solid $charcoal;
+  border-radius: 8px;
+  // background: rgba(0,0,0, 0.8);
+  background: rgba(255,255,255, 0.8);
+  width: fit-content;
+  padding: 40px 60px;
+  margin: 5em auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px; 
+  }
+
+  input {
+    color: $black;
+    margin: 10px;
+    padding: 20px;
+    background-color: $light-grey;
+    border: none;
+  }
+    input:focus {
+      outline: 1px solid $emerald;
+      transition: none;
+      background-color: #dcdcdc;
+    }
+  input[type="submit"] {
+    cursor: pointer;
+    background-color: $emerald;
+    color: white;
+    // border: none;
+    border-radius: 8px;
+    margin-top: 25px;
+    width: 40%;
+    align-self: center;
+  }
+    input[type="submit"]:hover {
+      background-color: #277174;
+    }
+}

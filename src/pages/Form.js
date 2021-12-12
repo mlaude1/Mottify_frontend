@@ -25,48 +25,54 @@ const Form = ({ initialTrack, handleSubmit, buttonLabel }) => {
   }
 
   return <form onSubmit={handleSubmission}>
-    <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.title}
-      name="title"
-      placeholder="Title"
-    />
-    <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.artist}
-      name="artist"
-      placeholder="Artist"
-    />
-    <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.album}
-      name="album"
-      placeholder="Album"
-    />
-    <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.albumCover}
-      name="albumCover"
-      placeholder="Album Cover"
-    />
-    <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.genre}
-      name="genre"
-      placeholder="Genre"
-    />
-    <input 
-      type="text"
-      onChange={handleChange}
-      value={formData.mp3Url}
-      name="mp3Url"
-      placeholder="mp3 File"
-    />
+    <h1>Stream Anything</h1>
+    <div className="left">
+      <input 
+        type="text"
+        onChange={handleChange}
+        value={formData.title}
+        name="title"
+        placeholder="Title"
+      />
+      <input 
+        type="text"
+        onChange={handleChange}
+        value={formData.artist}
+        name="artist"
+        placeholder="Artist"
+      />
+      <input 
+        type="text"
+        onChange={handleChange}
+        value={formData.album}
+        name="album"
+        placeholder="Album"
+      />
+    </div>
+
+    <div className="right">
+      <input 
+        type="text"
+        onChange={handleChange}
+        value={formData.albumCover}
+        name="albumCover"
+        placeholder="Album Cover"
+      />
+      <input 
+        type="text"
+        onChange={handleChange}
+        value={formData.genre}
+        name="genre"
+        placeholder="Genre"
+      />
+      <input 
+        type="text"
+        onChange={handleChange}
+        value={formData.mp3Url}
+        name="mp3Url"
+        placeholder="mp3 File"
+      />
+    </div>
     <input type="submit" value={buttonLabel} />
   </form>
 
