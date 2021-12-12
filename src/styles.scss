@@ -8,7 +8,10 @@ $charcoal: #495057;
 $black: #282828;
 $light-grn: #0cce6b;
 $green: #52b788;
-$emerald: #34a0a4;
+$keylime: #D9ED92;
+$ocean-grn: #76C893;
+$duck-blue: #34a0a4;
+$cerulean: #1A759F;
 
 // =========================
 // Mixins
@@ -36,8 +39,17 @@ body {
   min-height: 102vh;
 }
 
+// HTML Audio tag
 audio::-webkit-media-controls-enclosure {
-  border: 2px solid green;
+  border: 2px solid rgba(118, 200, 147, .6); 
+}
+audio::-webkit-media-controls-play-button {
+  background-color: $light-grn;
+  border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button:hover {
+  transform: scale(1.07);
+  transition: 250ms;
 }
 
 // =========================
@@ -46,35 +58,137 @@ audio::-webkit-media-controls-enclosure {
 nav {
   border: 2px dashed orange;
   background-color: white;
-  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  // white-space: nowrap;
 
-  h1 {
-    text-align: center;
+  .title {
+    text-decoration: none;
+  
+    h1 {
+      @include body-font();
+      font-size: 40px;
+      color: black;
+      margin: 30px;
+    }
+      h1:hover {
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px $duck-blue, 0 0 5px $green;
+      }
   }
-}
-
-// =========================
-// Title
-// =========================
-.title {
-  text-align: center;
-  margin: 60px 0 0 80px;
-  text-decoration: none;
-
-  h1 {
-    @include body-font();
-    font-size: 40px;
-    color: black;
+  .add {
+    margin: 30px;
+    background: none;
+    border: none;
+    position: relative;
+    right: 50px;
   }
-    h1:hover {
-      color: white;
-      text-shadow: 1px 1px 2px black, 0 0 25px $emerald, 0 0 5px $green;
+    .add:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      color: $cerulean;
     }
 }
+
+
+
+// =========================
+// Modal
+// =========================
+.btn-modal {
+  margin: 30px;
+  background: none;
+  border: none;
+}
+  .btn-modal:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+.overlay {
+  background-color: rgba(72, 72, 72, 0.5);
+  backdrop-filter: blur(4px);
+  transition: 2s filter linear;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+
+    .modal-content {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1.4;
+      background: #f1f1f1;
+      border-radius: 6px;
+      max-width: 600px;
+      min-width: 300px;
+      padding: 100px;
+      z-index: 1;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+      li {
+        line-height: 2.2;
+      }
+      .plus {
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 7px;
+      background: none;
+      border: none;
+    }
+      .close-modal:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: 50ms;
+      }
+      .overlay:hover {
+        cursor: pointer;
+      }
+}
+
 
 // =========================
 // Tracks (Index)
 // =========================
+input[type="search"] {
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,.1);
+  outline: none;
+  width: 300px;
+  padding-left: 40px;
+}
+
+.inputWithIcon {
+  position: relative;
+  margin: 30px 0 0 40px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
 .tracks-container {
   border: 2px dashed red;
   margin: auto;
@@ -121,7 +235,7 @@ input[type="radio"] {
   margin: 10px;
 }
   #heart-icon:hover {
-    transform: translateY(-10);
+    transform: scale(1.3);
   }
 
 // =========================
@@ -134,8 +248,9 @@ input[type="radio"] {
   width: 90%;
   margin: 30px auto;
   padding: 50px;
-  box-shadow: 10px 10px $green;
+  box-shadow: 10px 10px $ocean-grn;
   display: flex;
+  background-color: whitesmoke;
 
   .left {
     border: 2px dashed blue;
@@ -145,6 +260,7 @@ input[type="radio"] {
       max-width: 500px;
       max-height: 500 px;
       box-shadow: 8px 10px 16px 0 rgb(0 0 0 / 20%);
+      margin-bottom: 20px;
     }
       img:hover {
       box-shadow: 8px 10px 16px 0 rgb(0 0 0 / 45%);
@@ -157,6 +273,13 @@ input[type="radio"] {
     border: 2px dashed orange;
     width: 50%;
 
+    h2 {
+      margin: 15px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+    }
     .buttons-container {
       margin-top: 60px;
 
@@ -176,6 +299,24 @@ input[type="radio"] {
     }
   }
   
+}
+@media (max-width: 1200px) {
+  .single-track {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    border: 2px dashed orange;
+    justify-content: center;
+
+    .left, .right {
+      width: 100%;
+    }
+
+    img {
+      height: fit-content;
+    }
+  }
 }
 
 // =========================
@@ -206,13 +347,13 @@ form {
     border: none;
   }
     input:focus {
-      outline: 1px solid $emerald;
+      outline: 1px solid $duck-blue;
       transition: none;
       background-color: #dcdcdc;
     }
   input[type="submit"] {
     cursor: pointer;
-    background-color: $emerald;
+    background-color: $duck-blue;
     color: white;
     // border: none;
     border-radius: 8px;
@@ -221,6 +362,15 @@ form {
     align-self: center;
   }
     input[type="submit"]:hover {
-      background-color: #277174;
+      background-color: #30898c;
     }
+}
+
+@media (max-width: 805px) {
+  form {
+    .left, .right {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }

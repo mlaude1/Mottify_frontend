@@ -2,6 +2,8 @@
 import Form from "./pages/Form";
 import AllTracks from "./pages/AllTracks";
 import SingleTrack from "./pages/SingleTrack";
+import Modal from "./components/Modal";
+import { BsFillPlusCircleFill } from "react-icons/bs"
 
 // Import Hooks
 import { useState, useEffect } from "react"
@@ -100,13 +102,16 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
-        <Link to="/" className="title">
-        <h1>MottWire</h1>
-        </Link>
-      </nav>
+        <nav>
+          <Link to="/" className="title">
+          <h1>MottWire</h1>
+          </Link>
+          <Link to="/new"><button className="add"><BsFillPlusCircleFill size={40} /></button></Link>
+          <Modal />
+        </nav>
 
-      <Link to="/new"><button>Add a Song</button></Link>
+      {/* <Link to="/new"><button>Add a Song</button></Link> */}
+
       <Routes>
         <Route path="/" element={<AllTracks tracks={tracks} />}/>
         <Route path="/track/:id" element={<SingleTrack
@@ -117,7 +122,7 @@ function App() {
         <Route path="/new" element={<Form
           initialTrack={nullTrack}
           handleSubmit={addTracks}
-          buttonLabel="Add"
+          buttonLabel="Create"
         />}/>
         <Route path="/edit" element={<Form
           initialTrack={targetTrack}

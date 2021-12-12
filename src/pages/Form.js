@@ -25,7 +25,7 @@ const Form = ({ initialTrack, handleSubmit, buttonLabel }) => {
   }
 
   return <form onSubmit={handleSubmission}>
-    <h1>Stream Anything</h1>
+    <h1>Add Your Sounds</h1>
     <div className="left">
       <input 
         type="text"

@@ -28,4 +28,7 @@ import Valentine from "./audio/Valentine.mp3"
 ```
 
 - looks like I don't need the trackLength anymore (removed display from Form and SingleTrack)
-- adding 'favorite' to the schema as an integer
+- adding 'favorite' to the schema as an integer (can't figure it out tho)
+- styling, media queries for responsive, selecting elements
+- adding a Search Filter
+- adding a Modal (https://www.youtube.com/watch?v=9DwGahSqcEc)
