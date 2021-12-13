@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaArrowLeft } from 'react-icons/fa'
+import { FaMusic } from 'react-icons/fa'
 
 // ================ Tracks as displayed on the 'Show' page ================ //
 
@@ -23,7 +24,7 @@ const SingleTrack = ({ tracks, edit, deleteTrack }) => {
       <div className="right">
         <h1>{track?.title}</h1>
         <h2>{track?.artist}</h2>
-        <h3>{track?.genre}</h3>
+        <h3><FaMusic className="icon" />{track?.genre}</h3>
         <audio src={track?.mp3Url} controls>
           Your browser is unsupported
         </audio> <br />

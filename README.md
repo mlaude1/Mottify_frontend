@@ -32,3 +32,10 @@ import Valentine from "./audio/Valentine.mp3"
 - styling, media queries for responsive, selecting elements
 - adding a Search Filter
 - adding a Modal (https://www.youtube.com/watch?v=9DwGahSqcEc)
+- attempting to fix favorite button (useState, toggle, change backend value to boolean)
+  - was able to configure useState toggle to turn off heart, but still doesn't save on refresh
+
+  Presentation: 
+  - spotify but worse.
+  - more like LimeWire, but Mottify sounds better
+  - I have instructions included because you're gonna need it

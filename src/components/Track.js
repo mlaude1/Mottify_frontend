@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import Favorite from './Favorite'
 
 // ================ Tracks as displayed on the 'Index' page ================ //
